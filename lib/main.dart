@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xo_game/common/app_colors.dart';
+import 'package:xo_game/screens/game_screen.dart';
 import 'package:xo_game/screens/home_screen.dart';
 
 void main() {
@@ -22,8 +23,10 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      routes: {HomeScreen.routeName: (context) => HomeScreen()},
-      initialRoute: HomeScreen.routeName,
+      routes: {HomeScreen.routeName: (context) => HomeScreen(),
+        GameScreen.routeName: (context) => GameScreen()
+      },
+      initialRoute: GameScreen.routeName,
     );
   }
 }

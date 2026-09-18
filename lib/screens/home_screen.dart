@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xo_game/common/app_colors.dart';
 import 'package:xo_game/common/app_const.dart';
+import 'package:xo_game/screens/game_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,27 +59,35 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Expanded(
-                              child: Container(
-                                padding: EdgeInsets.all(30),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(32),
-                                  color: AppColors.whiteColor,
-                                ),
-                                child: Image.asset(
-                                  AppConst.xImage,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pushNamed(GameScreen.routeName,arguments: 'x');
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(30),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(32),
+                                    color: AppColors.whiteColor,
+                                  ),
+                                  child: Image.asset(
+                                    AppConst.xImage,
+                                  ),
                                 ),
                               ),
                             ),
                             SizedBox(width: 10,),
                             Expanded(
-                              child: Container(
-                                padding: EdgeInsets.all(30),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(32),
-                                  color: AppColors.whiteColor,
-                                ),
-                                child: Image.asset(
-                                  AppConst.oImage,
+                              child: InkWell(
+                                onTap: () => Navigator.of(context).pushNamed(GameScreen.routeName,arguments: 'o'),
+                                child: Container(
+                                  padding: EdgeInsets.all(30),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(32),
+                                    color: AppColors.whiteColor,
+                                  ),
+                                  child: Image.asset(
+                                    AppConst.oImage,
+                                  ),
                                 ),
                               ),
                             ),

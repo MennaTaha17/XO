@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {HomeScreen.routeName: (context) => HomeScreen(),
         GameScreen.routeName: (context) => GameScreen()
       },
-      initialRoute: GameScreen.routeName,
+      initialRoute: HomeScreen.routeName,
     );
   }
 }
